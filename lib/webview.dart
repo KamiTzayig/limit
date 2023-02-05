@@ -119,7 +119,7 @@ Page resource error:
           ''');
           },
           onNavigationRequest: (NavigationRequest request) {
-            if (!request.url.startsWith('https://my.forms.app') && !request.url.startsWith('https://www.google.com')) {
+            if (!request.url.startsWith('https://my.forms.app') && !request.url.startsWith('https://en.wikipedia.org') && !request.url.startsWith('https://he.wikipedia.org')&& !request.url.startsWith('https://en.m.wikipedia.org')&& !request.url.startsWith('https://he.m.wikipedia.org')) {
               debugPrint('blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }
@@ -136,7 +136,7 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse('https://google.com'));
+      ..loadRequest(Uri.parse('https://en.wikipedia.org/wiki/Main_Page'));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {
